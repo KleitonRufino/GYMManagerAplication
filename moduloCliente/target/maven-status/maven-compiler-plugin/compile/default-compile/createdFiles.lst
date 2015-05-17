@@ -1,0 +1,5 @@
+com\reuso\service\ServiceCliente.class
+com\reuso\repository\impl\RepositoryClienteImpl.class
+com\reuso\model\Cliente.class
+com\reuso\repository\RepositoryCliente.class
+com\reuso\service\impl\ServiceClienteImpl.class
