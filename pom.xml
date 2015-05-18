@@ -9,6 +9,9 @@
 	<modules>
 		<module>aplicacaoPrincipal</module>
 		<module>moduloCliente</module>
+		<module>moduloFornecedor</module>
+		<module>moduloColaborador</module>
+		<module>moduloConexaoBDJPA</module>
 	</modules>
 
 	<dependencyManagement>
