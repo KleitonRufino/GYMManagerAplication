@@ -12,6 +12,8 @@
 		<module>moduloFornecedor</module>
 		<module>moduloColaborador</module>
 		<module>moduloConexaoBDJPA</module>
+		<module>moduloGerenciamentoDeConta</module>
+		<module>moduloCobranca</module>
 	</modules>
 
 	<dependencyManagement>
