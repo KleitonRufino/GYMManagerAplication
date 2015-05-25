@@ -4,16 +4,14 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import javax.inject.Named;
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
 
-//import org.springframework.transaction.annotation.Transactional;
-
-
-import com.reuso.enumeration.QueryType;
 import com.reuso.repository.GenericRepository;
 import com.reuso.util.JPAUtil;
+
+//import org.springframework.transaction.annotation.Transactional;
+import com.reuso.enumeration.QueryType;
 
 public class JpaGenericRepositoryImpl<T> implements GenericRepository<T> {
 

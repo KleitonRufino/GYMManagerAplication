@@ -7,13 +7,13 @@
 	<packaging>pom</packaging>
 
 	<modules>
-		<module>aplicacaoPrincipal</module>
 		<module>moduloCliente</module>
 		<module>moduloFornecedor</module>
 		<module>moduloColaborador</module>
 		<module>moduloConexaoBDJPA</module>
 		<module>moduloGerenciamentoDeConta</module>
 		<module>moduloCobranca</module>
+		<module>appWEB</module>
 	</modules>
 
 	<dependencyManagement>
