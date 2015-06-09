@@ -10,7 +10,6 @@
 		<module>bodyCondition</module>
 		<module>nutrition</module>
 		<module>personalTrainer</module>
-		<module>GYMManagerAplication</module>
 	</modules>
 
 	<dependencyManagement>
