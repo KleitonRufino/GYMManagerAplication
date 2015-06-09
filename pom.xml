@@ -7,16 +7,20 @@
 	<packaging>pom</packaging>
 
 	<modules>
-		<module>moduloCliente</module>
-		<module>moduloFornecedor</module>
-		<module>moduloColaborador</module>
-		<module>moduloConexaoBDJPA</module>
-		<module>moduloGerenciamentoDeConta</module>
-		<module>moduloCobranca</module>
-		<module>appWEB</module>
+		<module>bodyCondition</module>
+		<module>nutrition</module>
+		<module>personalTrainer</module>
 	</modules>
 
 	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>mysql</groupId>
+				<artifactId>mysql-connector-java</artifactId>
+				<version>5.1.6</version>
+			</dependency>
+		</dependencies>
+
 
 	</dependencyManagement>
 
