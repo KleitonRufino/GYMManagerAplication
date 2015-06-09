@@ -7,9 +7,9 @@
 	<packaging>pom</packaging>
 
 	<modules>
-		<module>bodyCondition</module>
 		<module>nutrition</module>
 		<module>personalTrainer</module>
+		<module>bodyCondition</module>
 	</modules>
 
 	<dependencyManagement>
