@@ -10,6 +10,7 @@
 		<module>nutrition</module>
 		<module>personalTrainer</module>
 		<module>bodyCondition</module>
+		<module>webAplication</module>
 	</modules>
 
 	<dependencyManagement>
