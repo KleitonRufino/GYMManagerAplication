@@ -26,7 +26,9 @@ public class LoginController {
 	@RequestMapping(value = "/efetuaLogin", method = RequestMethod.POST)
 	public String efetuaLogin(@RequestParam(value = "email") String email,
 			@RequestParam(value = "senha") String senha, HttpSession session) {
-		if ("user@email.com".equals(email) && "1234".equals(senha))
+		if ("adm@email.com".equals(email) && "1234".equals(senha))
+			return "/administracao/index";
+		else if ("user@email.com".equals(email) && "1234".equals(senha))
 			return "/cliente/index";
 		return "redirect:loginfailed";
 		

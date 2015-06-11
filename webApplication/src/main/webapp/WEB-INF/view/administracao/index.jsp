@@ -33,6 +33,16 @@ body {
 					<a class="navbar-brand" href="#">GYMManger</a>
 				</div>
 				<div id="navbar" class="navbar-collapse collapse">
+					<ul class="nav navbar-nav">
+						<li class="dropdown"><a href="#" class="dropdown-toggle"
+							data-toggle="dropdown" role="button" aria-expanded="false">Cliente
+								<span class="caret"></span>
+						</a>
+							<ul class="dropdown-menu" role="menu">
+								<li><a>Novo</a></li>
+								<li><a href="/cliente/index">Listar</a></li>
+							</ul></li>
+					</ul>
 					<ul class="nav navbar-nav navbar-right">
 						<li><a href="../navbar-fixed-top/">Sair</a></li>
 					</ul>
@@ -40,6 +50,8 @@ body {
 			</div>
 		</nav>
 	</div>
+
+
 
 </body>
 </html>
