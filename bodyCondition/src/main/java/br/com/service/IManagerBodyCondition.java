@@ -6,14 +6,13 @@ import br.com.model.BodyCondition;
 
 public interface IManagerBodyCondition {
 	
-	public List<BodyCondition> find();
 	
-	public List<BodyCondition> findByUser(Long id_user);
+	public List<BodyCondition> findByUser(Long idClient);
 
-	public BodyCondition currentBodyCondition(Long id_user);
+	public BodyCondition currentBodyCondition(Long idClient);
 	
-	public void addBodyCondition(BodyCondition condition, Long id_usuario);
+	public void addBodyCondition(BodyCondition condition, Long idClient);
 	
-	public void delete(BodyCondition condition, Long id_user);
+	public void delete(Long id);
 	
 }
