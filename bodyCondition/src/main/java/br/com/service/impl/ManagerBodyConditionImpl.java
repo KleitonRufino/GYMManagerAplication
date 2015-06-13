@@ -6,9 +6,9 @@ import br.com.dao.BodyConditionDAO;
 import br.com.model.BodyCondition;
 import br.com.service.IManagerBodyCondition;
 
-public class IManagerBodyConditionImpl implements IManagerBodyCondition {
+public class ManagerBodyConditionImpl implements IManagerBodyCondition {
 	private BodyConditionDAO dao;
-	public IManagerBodyConditionImpl() {
+	public ManagerBodyConditionImpl() {
 		this.dao = new BodyConditionDAO();
 	}
 	

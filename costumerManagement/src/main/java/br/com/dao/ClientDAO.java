@@ -32,7 +32,6 @@ public class ClientDAO {
 				insereSt.close();
 				conexao.close();
 			} catch (SQLException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
@@ -62,7 +61,6 @@ public class ClientDAO {
 				find.close();
 				conexao.close();
 			} catch (SQLException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
@@ -96,7 +94,6 @@ public class ClientDAO {
 				find.close();
 				conexao.close();
 			} catch (SQLException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
@@ -130,7 +127,6 @@ public class ClientDAO {
 				find.close();
 				conexao.close();
 			} catch (SQLException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
@@ -156,7 +152,6 @@ public class ClientDAO {
 				update.close();
 				conexao.close();
 			} catch (SQLException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
@@ -177,7 +172,6 @@ public class ClientDAO {
 				delete.close();
 				conexao.close();
 			} catch (SQLException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}

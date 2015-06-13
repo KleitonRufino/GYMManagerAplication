@@ -6,11 +6,11 @@ import br.com.dao.ClientDAO;
 import br.com.model.Client;
 import br.com.service.IClientManager;
 
-public class IClientManagerImpl implements IClientManager {
+public class ClientManagerImpl implements IClientManager {
 
 	private ClientDAO dao;
 
-	public IClientManagerImpl() {
+	public ClientManagerImpl() {
 		this.dao = new ClientDAO();
 	}
 

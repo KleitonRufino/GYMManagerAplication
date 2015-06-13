@@ -4,11 +4,11 @@ import br.com.dao.UsuarioDAO;
 import br.com.model.Usuario;
 import br.com.service.IUsuarioManager;
 
-public class IUsuarioManagerImpl implements IUsuarioManager {
+public class UsuarioManagerImpl implements IUsuarioManager {
 
 	private UsuarioDAO dao;
 
-	public IUsuarioManagerImpl() {
+	public UsuarioManagerImpl() {
 		this.dao = new UsuarioDAO();
 	}
 
