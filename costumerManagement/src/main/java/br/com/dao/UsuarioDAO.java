@@ -123,11 +123,12 @@ public class UsuarioDAO {
 	public void update(Usuario user) {
 		Connection conexao = Conexao.getConnection();
 		PreparedStatement update = null;
-		String sql = "update usuario set login=?, senha=?";
+		String sql = "update usuario set login=?, senha=? where id=?";
 		try {
 			update = (PreparedStatement) conexao.prepareStatement(sql);
 			update.setString(1, user.getLogin());
 			update.setString(2, user.getSenha());
+			update.setLong(3, user.getId());
 			update.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();

@@ -12,19 +12,9 @@
 		<module>bodyCondition</module>
 		<module>webApplication</module>
 		<module>costumerManagement</module>
+		<module>dispatchSMS</module>
+		<module>dispatchEMAIL</module>
 	</modules>
-	<dependencyManagement>
-		<dependencies>
-			<dependency>
-				<groupId>postgresql</groupId>
-				<artifactId>postgresql</artifactId>
-				<version>9.1-901-1.jdbc4</version>
-			</dependency>
-
-		</dependencies>
-
-
-	</dependencyManagement>
 
 	<build>
 		<plugins>

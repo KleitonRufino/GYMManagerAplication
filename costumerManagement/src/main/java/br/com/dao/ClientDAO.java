@@ -136,7 +136,7 @@ public class ClientDAO {
 	public void update(Client client) {
 		Connection conexao = Conexao.getConnection();
 		PreparedStatement update = null;
-		String sql = "update cliente set ativo=?, cpf=?, datanascimento=?, datavencimento=?, nome=?";
+		String sql = "update cliente set ativo=?, cpf=?, datanascimento=?, datavencimento=?, nome=? where id=?";
 		try {
 			update = (PreparedStatement) conexao.prepareStatement(sql);
 			update.setBoolean(1, client.isAtivo());
@@ -144,6 +144,7 @@ public class ClientDAO {
 			update.setDate(3, client.getDataNascimento());
 			update.setDate(4, client.getDataVencimento());
 			update.setString(5, client.getNome());
+			update.setLong(6, client.getId());
 			update.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();

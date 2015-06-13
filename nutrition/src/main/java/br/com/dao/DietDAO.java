@@ -99,10 +99,11 @@ public class DietDAO {
 	public void update(Diet diet) {
 		Connection conexao = Conexao.getConnection();
 		PreparedStatement update = null;
-		String sql = "update dieta set descricao=?";
+		String sql = "update dieta set descricao=? where id=?";
 		try {
 			update = (PreparedStatement) conexao.prepareStatement(sql);
 			update.setString(1, diet.getDescription());
+			update.setLong(2, diet.getId());
 			update.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
