@@ -26,7 +26,6 @@ public class UsuarioDAO {
 				insereSt.close();
 				conexao.close();
 			} catch (SQLException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
@@ -53,7 +52,6 @@ public class UsuarioDAO {
 				find.close();
 				conexao.close();
 			} catch (SQLException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
@@ -82,7 +80,6 @@ public class UsuarioDAO {
 				find.close();
 				conexao.close();
 			} catch (SQLException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
@@ -112,7 +109,6 @@ public class UsuarioDAO {
 				find.close();
 				conexao.close();
 			} catch (SQLException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
@@ -137,7 +133,6 @@ public class UsuarioDAO {
 				update.close();
 				conexao.close();
 			} catch (SQLException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
@@ -158,7 +153,6 @@ public class UsuarioDAO {
 				delete.close();
 				conexao.close();
 			} catch (SQLException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}

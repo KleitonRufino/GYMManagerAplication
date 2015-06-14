@@ -30,7 +30,6 @@ public class DietDAO {
 				insere.close();
 				conexao.close();
 			} catch (SQLException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
@@ -57,7 +56,6 @@ public class DietDAO {
 				find.close();
 				conexao.close();
 			} catch (SQLException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
@@ -89,7 +87,6 @@ public class DietDAO {
 				find.close();
 				conexao.close();
 			} catch (SQLException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}

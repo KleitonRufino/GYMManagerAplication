@@ -43,7 +43,6 @@ public class BodyConditionDAO {
 				find.close();
 				conexao.close();
 			} catch (SQLException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
@@ -78,7 +77,6 @@ public class BodyConditionDAO {
 				find.close();
 				conexao.close();
 			} catch (SQLException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
@@ -110,7 +108,6 @@ public class BodyConditionDAO {
 				insere.close();
 				conexao.close();
 			} catch (SQLException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
@@ -131,7 +128,6 @@ public class BodyConditionDAO {
 				delete.close();
 				conexao.close();
 			} catch (SQLException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}

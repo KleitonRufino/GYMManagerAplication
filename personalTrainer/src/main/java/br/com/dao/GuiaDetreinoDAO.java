@@ -45,7 +45,6 @@ public class GuiaDetreinoDAO {
 				insere.close();
 				conexao.close();
 			} catch (SQLException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
@@ -78,7 +77,6 @@ public class GuiaDetreinoDAO {
 				find.close();
 				conexao.close();
 			} catch (SQLException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
@@ -111,7 +109,6 @@ public class GuiaDetreinoDAO {
 				find.close();
 				conexao.close();
 			} catch (SQLException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
@@ -142,7 +139,6 @@ public class GuiaDetreinoDAO {
 				find.close();
 				conexao.close();
 			} catch (SQLException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
@@ -150,7 +146,6 @@ public class GuiaDetreinoDAO {
 	}
 
 	public void delete(Long id_guia_treinos) {
-		// TODO Auto-generated method stub
 		Connection conexao = Conexao.getConnection();
 		PreparedStatement delete = null;
 		String sql = "delete from guiadetreino_treinos where guiadetreino_id=?";
@@ -253,7 +248,6 @@ public class GuiaDetreinoDAO {
 				find.close();
 				conexao.close();
 			} catch (SQLException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
@@ -298,7 +292,6 @@ public class GuiaDetreinoDAO {
 				find.close();
 				conexao.close();
 			} catch (SQLException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
