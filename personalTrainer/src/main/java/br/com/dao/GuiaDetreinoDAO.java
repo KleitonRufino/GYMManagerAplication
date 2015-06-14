@@ -264,7 +264,7 @@ public class GuiaDetreinoDAO {
 		if(string.equals("SEGUNDA")){
 			return DiaDaSemana.SEGUNDA;
 		}if(string.equals("TERCA")){
-			return DiaDaSemana.TERÇA;
+			return DiaDaSemana.TERCA;
 		}if(string.equals("QUARTA")){
 			return DiaDaSemana.QUARTA;
 		}if(string.equals("QUINTA")){
