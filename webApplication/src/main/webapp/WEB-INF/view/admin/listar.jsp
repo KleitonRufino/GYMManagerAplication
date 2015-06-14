@@ -10,8 +10,14 @@
 	<table>
 		<tr>
 			<th>Id</th>
+			<th>Nome</th>
 		</tr>
-		
+		<c:forEach items="${clientes}" var="cliente">
+			<tr id="cliente_${cliente.id}">
+				<td>${cliente.id}</td> 
+				<td>${cliente.nome }</td>
+			</tr>
+		</c:forEach>
 	</table>
 </body>
 </html>
