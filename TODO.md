@@ -1,13 +1,7 @@
 #Atividades
 
-###Kleiton
+###Kleiton e Andre
 montar o produto
-
----
-###Andre
-implementar modulos:
-  - dispatchSMS
-  - monthlyPaymentManager
 
 ---
 ###João
