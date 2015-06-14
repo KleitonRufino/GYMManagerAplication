@@ -12,8 +12,11 @@
 		<module>bodyCondition</module>
 		<module>webApplication</module>
 		<module>costumerManagement</module>
-		<module>dispatchSMS</module>
 		<module>dispatchEMAIL</module>
+		<module>costsManager</module>
+		<module>accountManager</module>
+		<module>notifications</module>
+		<module>dispatchSMS</module>
 	</modules>
 
 	<build>
