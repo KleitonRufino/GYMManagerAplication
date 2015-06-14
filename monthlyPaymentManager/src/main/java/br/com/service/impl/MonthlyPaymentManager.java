@@ -20,7 +20,7 @@ public class MonthlyPaymentManager implements IManagerMonthlyPayment{
 		List<Client> clientesDevedores = new ArrayList<Client>();
 		Connection conexao = Conexao.getConnection();
 		PreparedStatement find = null;
-		String sql = "select * from cliente c where c.id NOT IN (select cliente_id from mensalidades a where mesreferencia=? and ano = ?)";
+		String sql = "select * from cliente c where c.ativo = TRUE and c.id NOT IN (select cliente_id from mensalidades a where mesreferencia=? and ano = ?)";
 		try {
 			find = (PreparedStatement) conexao.prepareStatement(sql);
 			find.setString(1, mes.toString());
@@ -32,7 +32,7 @@ public class MonthlyPaymentManager implements IManagerMonthlyPayment{
 				devedor.setAtivo(rs.getBoolean("ativo"));
 				devedor.setCpf(rs.getLong("cpf"));
 				devedor.setDataNascimento(rs.getDate("datanascimento"));
-				devedor.setDataVencimento(rs.getDate("datavencimento"));
+				devedor.setDataVencimento(rs.getInt("datavencimento"));
 				devedor.setNome(rs.getString("nome"));
 				clientesDevedores.add(devedor);
 			}
@@ -67,7 +67,7 @@ public class MonthlyPaymentManager implements IManagerMonthlyPayment{
 				clienteEmDia.setAtivo(rs.getBoolean("ativo"));
 				clienteEmDia.setCpf(rs.getLong("cpf"));
 				clienteEmDia.setDataNascimento(rs.getDate("datanascimento"));
-				clienteEmDia.setDataVencimento(rs.getDate("datavencimento"));
+				clienteEmDia.setDataVencimento(rs.getInt("datavencimento"));
 				clienteEmDia.setNome(rs.getString("nome"));
 				clientesEmDia.add(clienteEmDia);
 			}
