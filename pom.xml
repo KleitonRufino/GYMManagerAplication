@@ -17,6 +17,8 @@
 		<module>accountManager</module>
 		<module>notifications</module>
 		<module>dispatchSMS</module>
+		<module>colaboratorManagement</module>
+		<module>extraActivitys</module>
 	</modules>
 
 	<build>
