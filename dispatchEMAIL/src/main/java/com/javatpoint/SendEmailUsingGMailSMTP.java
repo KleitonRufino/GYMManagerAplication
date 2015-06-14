@@ -17,13 +17,14 @@ public class SendEmailUsingGMailSMTP {
 
 		// Sender's email ID needs to be mentioned
 		String from = "gymmanage@gmail.com";// change accordingly
-		final String username = "Gym";// change accordingly
+		final String username = "gymmanage@gmail.com";// change accordingly
 		final String password = "Qq1admin";// change accordingly
 
 		// Assuming you are sending email through relay.jangosmtp.net
 		String host = "smtp.gmail.com";
 
 		Properties props = new Properties();
+		props.put("mail.smtp.ssl.trust", "smtp.gmail.com");
 		props.put("mail.smtp.auth", "true");
 		props.put("mail.smtp.starttls.enable", "true");
 		props.put("mail.smtp.host", host);
