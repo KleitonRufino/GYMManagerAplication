@@ -70,7 +70,7 @@ public class LoginController {
 					client.getDataVencimento());
 			session.setAttribute("ativoCliente", client.isAtivo());
 			session.setAttribute("nomeCliente", client.getNome());
-			return "/administracao/index";
+			return "/admin/index";
 		} else
 			return "/cliente/index";
 	}

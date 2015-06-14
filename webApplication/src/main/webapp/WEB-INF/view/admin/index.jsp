@@ -30,7 +30,7 @@ body {
 							class="icon-bar"></span> <span class="icon-bar"></span> <span
 							class="icon-bar"></span>
 					</button>
-					<a class="navbar-brand" href="#">GYMManger</a>
+					<a class="navbar-brand" href="/administracao/index">GYMManger</a>
 				</div>
 				<div id="navbar" class="navbar-collapse collapse">
 					<ul class="nav navbar-nav">
@@ -40,7 +40,7 @@ body {
 						</a>
 							<ul class="dropdown-menu" role="menu">
 								<li><a>Novo</a></li>
-								<li><a href="/cliente/index">Listar</a></li>
+								<li><a href="administracao/clientes">Listar</a></li>
 							</ul></li>
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
