@@ -52,26 +52,27 @@ public class LoginController {
 	public String efetuaLogin(@RequestParam(value = "email") String email,
 			@RequestParam(value = "senha") String senha,
 			HttpServletRequest request) {
-		this.usuario = this.usuarioManager.find(email, senha);
-		if (this.usuario == null) {
-			return "redirect:loginfailed";
-		}
-		if ("admin@gmail.com".equals(this.usuario.getLogin())) {
-			Client client = this.clientManager.findByIdUser(this.usuario
-					.getId());
-			request.getSession().invalidate();
-			HttpSession session = request.getSession(true);
-			session.setAttribute("idUsuario", this.usuario.getId());
-			session.setAttribute("idCliente", client.getId());
-			session.setAttribute("cpfCliente", client.getCpf());
-			session.setAttribute("dataNascimentoCliente",
-					client.getDataNascimento());
-			session.setAttribute("dataVencimentoCliente",
-					client.getDataVencimento());
-			session.setAttribute("ativoCliente", client.isAtivo());
-			session.setAttribute("nomeCliente", client.getNome());
+//		this.usuario = this.usuarioManager.find(email, senha);
+//		if (this.usuario == null) {
+//			return "redirect:loginfailed";
+//		}
+		if ("admin@gmail.com".equals(email)) {
+//			Client client = this.clientManager.findByIdUser(this.usuario
+//					.getId());
+//			request.getSession().invalidate();
+//			HttpSession session = request.getSession(true);
+//			session.setAttribute("idUsuario", this.usuario.getId());
+//			session.setAttribute("idCliente", client.getId());
+//			session.setAttribute("cpfCliente", client.getCpf());
+//			session.setAttribute("dataNascimentoCliente",
+//					client.getDataNascimento());
+//			session.setAttribute("dataVencimentoCliente",
+//					client.getDataVencimento());
+//			session.setAttribute("ativoCliente", client.isAtivo());
+//			session.setAttribute("nomeCliente", client.getNome());
 			return "/admin/index";
 		} else
-			return "/cliente/index";
+			return "redirect:loginfailed";
 	}
+	
 }

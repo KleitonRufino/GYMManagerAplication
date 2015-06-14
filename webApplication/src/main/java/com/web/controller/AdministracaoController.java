@@ -25,7 +25,7 @@ public class AdministracaoController {
 		List<Client> clients = this.managerClient.findAll();
 		System.out.println(clients.size());
 		model.addAttribute("clientes", clients);
-		return Constants.clientes;
+		return "admin/lista";
 	}
 	
 }
