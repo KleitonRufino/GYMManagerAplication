@@ -35,4 +35,9 @@ public class ManagerSupplierImpl implements IManagerSupplier {
 		this.dao.deleteSupplier(idSupplier);
 	}
 
+	@Override
+	public void addSupplierProduct(Long idSupplier, Long idProduct) {
+		this.dao.addSupplierProduct(idSupplier, idProduct);
+	}
+
 }
