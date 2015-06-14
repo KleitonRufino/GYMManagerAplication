@@ -7,14 +7,21 @@ import java.sql.SQLException;
 
 public class Conexao {
 
+	
+	
 	public static Connection getConnection() {
+		 String url = "jdbc:postgresql://localhost:5432/gym_manager";  
+	     String login = "postgres";  
+	     String senha = "admin"; 
 		try {
-			return DriverManager.getConnection(
-					"jdbc:postgresql://localhost:5432/gym_manager", "postgres",
-					"admin");
+			Class.forName("org.postgresql.Driver");
+			return DriverManager.getConnection(url, login, senha);
 		} catch (SQLException e) {
 			throw new RuntimeException(e);
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
 		}
+		return null;
 	}
 
 }

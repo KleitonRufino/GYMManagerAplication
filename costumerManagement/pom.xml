@@ -6,8 +6,10 @@
 		<artifactId>sistemaGYMManager</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
+	
 	<artifactId>costumerManagement</artifactId>
-
+	<packaging>jar</packaging>
+	
 	<dependencies>
 		<dependency>
 			<groupId>org.postgresql</groupId>

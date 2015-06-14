@@ -177,4 +177,36 @@ public class ClientDAO {
 			}
 		}
 	}
+
+	public Client findByIdUser(Long idUser) {
+		Client client = new Client();
+		Connection conexao = Conexao.getConnection();
+		PreparedStatement find = null;
+		String sql = "select * from cliente c where usuario_id=?";
+		try {
+			find = (PreparedStatement) conexao.prepareStatement(sql);
+			find.setLong(1, idUser);
+			ResultSet rs = find.executeQuery();
+			while (rs.next()) {
+				client.setId(rs.getLong("id"));
+				client.setAtivo(rs.getBoolean("ativo"));
+				client.setCpf(rs.getLong("cpf"));
+				client.setDataNascimento(rs.getDate("datanascimento"));
+				client.setDataVencimento(rs.getDate("datavencimento"));
+				client.setNome(rs.getString("nome"));
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				find.close();
+				conexao.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+
+		return client;
+	}
+
 }

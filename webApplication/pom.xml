@@ -14,6 +14,14 @@
 	</properties>
 
 	<dependencies>
+		<!-- Modulo CostumerManagement -->
+		<dependency>
+			<groupId>com.reuso</groupId>
+			<artifactId>costumerManagement</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+
+
 		<!-- Spring -->
 		<dependency>
 			<groupId>org.springframework</groupId>

@@ -10,6 +10,12 @@ import conexao.Conexao;
 
 public class UsuarioDAO {
 
+	public static void main(String[] args) {
+		UsuarioDAO dao = new UsuarioDAO();
+		Usuario user = dao.find("admin@gmail.com", "1234");
+		System.out.println(user.getLogin());
+	}
+	
 	public void save(Usuario user) {
 		Connection conexao = Conexao.getConnection();
 		PreparedStatement insereSt = null;

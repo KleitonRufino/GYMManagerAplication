@@ -44,7 +44,7 @@ body {
 							</ul></li>
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
-						<li><a href="../navbar-fixed-top/">Sair</a></li>
+						<li><a href="sair">Sair</a></li>
 					</ul>
 				</div>
 			</div>

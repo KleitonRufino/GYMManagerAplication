@@ -44,4 +44,9 @@ public class ClientManagerImpl implements IClientManager {
 		this.dao.remove(id);
 	}
 
+	@Override
+	public Client findByIdUser(Long idUser) {
+		return this.dao.findByIdUser(idUser);
+	}
+
 }

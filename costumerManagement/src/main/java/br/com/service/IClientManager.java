@@ -11,4 +11,5 @@ public interface IClientManager {
 	public List<Client> findName(String nome);
 	public void update(Client client);
 	public void remove(Long id);
+	public Client findByIdUser(Long idUser);
 }
