@@ -19,6 +19,8 @@
 		<module>dispatchSMS</module>
 		<module>colaboratorManagement</module>
 		<module>extraActivitys</module>
+		<module>supplierManagement</module>
+		<module>monthlyPaymentManager</module>
 	</modules>
 
 	<build>
