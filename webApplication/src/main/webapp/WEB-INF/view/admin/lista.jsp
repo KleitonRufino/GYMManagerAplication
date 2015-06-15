@@ -46,6 +46,7 @@ body {
 				<th>Data Nascimento</th>
 				<th>Data Vencimento</th>
 				<th></th>
+
 			</tr>
 			<c:forEach items="${clientes}" var="cliente">
 				<tr id="cliente_${cliente.id}">
@@ -57,6 +58,7 @@ body {
 					<td>${cliente.dataVencimento }</td>
 					<td><a href="editar?id=${cliente.id}" role="button"
 						class="btn btn-primary">Editar</a></td>
+
 				</tr>
 			</c:forEach>
 		</table>

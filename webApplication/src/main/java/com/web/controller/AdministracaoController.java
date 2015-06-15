@@ -40,11 +40,22 @@ public class AdministracaoController {
 		return "admin/novo";
 	}
 
+	@RequestMapping(value = "/enviaEmail", method = RequestMethod.GET)
+	public String enviarEmailCliente(Model model) {
+		return "admin/email";
+	}
+	
+	@RequestMapping(value = "/notificaCliente", method = RequestMethod.GET)
+	public String notificarCliente(Model model) {
+		return "admin/notificacao";
+	}
+	
 	@RequestMapping(value = "/editar", method = RequestMethod.GET)
 	public String editarCliente(Long id, Model model) {
 		model.addAttribute("cliente", this.managerClient.find(id));
 		return "admin/editar";
 	}
+	
 
 	@RequestMapping(value = "/alterarCliente", method = RequestMethod.POST)
 	public String alterarCliente(Client client, Model model,
@@ -81,4 +92,5 @@ public class AdministracaoController {
 		return "redirect:clientes";
 	}
 
+	
 }

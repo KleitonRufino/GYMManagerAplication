@@ -27,6 +27,21 @@
 								<li><a href="/webApplication/administracao/clientes">Lista</a></li>
 							</ul></li>
 					</ul>
+					
+					
+					<ul class="nav navbar-nav">
+						<li class="dropdown open"><a href="#" class="dropdown-toggle"
+							data-toggle="dropdown" role="button" aria-expanded="true">Outros
+								<span class="caret"></span>
+						</a>
+							<ul class="dropdown-menu" role="menu">
+								<li><a href="/webApplication/administracao/notificaCliente">Notificacao</a></li>
+								<li><a href="/webApplication/administracao/enviaEmail">Email</a></li>
+							</ul></li>
+					</ul>
+					
+					
+					
 					<ul class="nav navbar-nav navbar-right">
 						<li><a href="sair">Sair</a></li>
 					</ul>
