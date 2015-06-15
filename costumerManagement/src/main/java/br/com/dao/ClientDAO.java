@@ -15,15 +15,16 @@ public class ClientDAO {
 	public void save(Client client, Long idUser) {
 		Connection conexao = Conexao.getConnection();
 		PreparedStatement insereSt = null;
-		String sql = "insert into cliente(ativo,cpf,datanascimento,datavencimento,nome,usuario_id) values (?,?,?,?,?,?)";
+		String sql = "insert into cliente(ativo,cpf,telefone,datanascimento,datavencimento,nome,usuario_id) values (?,?,?,?,?,?,?)";
 		try {
 			insereSt = (PreparedStatement) conexao.prepareStatement(sql);
-			insereSt.setBoolean(1, client.isAtivo());
+			insereSt.setBoolean(1, true);
 			insereSt.setLong(2, client.getCpf());
-			insereSt.setDate(3, client.getDataNascimento());
-			insereSt.setDate(4, client.getDataVencimento());
-			insereSt.setString(5, client.getNome());
-			insereSt.setLong(6, idUser);
+			insereSt.setString(3, client.getTelefone());
+			insereSt.setDate(4, client.getDataNascimento());
+			insereSt.setLong(5, client.getDataVencimento());
+			insereSt.setString(6, client.getNome());
+			insereSt.setLong(7, idUser);
 			insereSt.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -51,7 +52,8 @@ public class ClientDAO {
 				client.setAtivo(rs.getBoolean("ativo"));
 				client.setCpf(rs.getLong("cpf"));
 				client.setDataNascimento(rs.getDate("datanascimento"));
-				client.setDataVencimento(rs.getDate("datavencimento"));
+				client.setDataVencimento(rs.getLong("datavencimento"));
+				client.setTelefone(rs.getString("telefone"));
 				client.setNome(rs.getString("nome"));
 			}
 		} catch (SQLException e) {
@@ -83,7 +85,8 @@ public class ClientDAO {
 				client.setAtivo(rs.getBoolean("ativo"));
 				client.setCpf(rs.getLong("cpf"));
 				client.setDataNascimento(rs.getDate("datanascimento"));
-				client.setDataVencimento(rs.getDate("datavencimento"));
+				client.setDataVencimento(rs.getLong("datavencimento"));
+				client.setTelefone(rs.getString("telefone"));
 				client.setNome(rs.getString("nome"));
 				clients.add(client);
 			}
@@ -116,7 +119,8 @@ public class ClientDAO {
 				client.setAtivo(rs.getBoolean("ativo"));
 				client.setCpf(rs.getLong("cpf"));
 				client.setDataNascimento(rs.getDate("datanascimento"));
-				client.setDataVencimento(rs.getDate("datavencimento"));
+				client.setDataVencimento(rs.getLong("datavencimento"));
+				client.setTelefone(rs.getString("telefone"));
 				client.setNome(rs.getString("nome"));
 				clients.add(client);
 			}
@@ -136,13 +140,14 @@ public class ClientDAO {
 	public void update(Client client) {
 		Connection conexao = Conexao.getConnection();
 		PreparedStatement update = null;
-		String sql = "update cliente set ativo=?, cpf=?, datanascimento=?, datavencimento=?, nome=? where id=?";
+		String sql = "update cliente set ativo=?, cpf=?,telefone=?, datanascimento=?, datavencimento=?, nome=? where id=?";
 		try {
 			update = (PreparedStatement) conexao.prepareStatement(sql);
 			update.setBoolean(1, client.isAtivo());
 			update.setLong(2, client.getCpf());
+			update.setString(3, client.getTelefone());
 			update.setDate(3, client.getDataNascimento());
-			update.setDate(4, client.getDataVencimento());
+			update.setLong(4, client.getDataVencimento());
 			update.setString(5, client.getNome());
 			update.setLong(6, client.getId());
 			update.executeUpdate();
@@ -191,8 +196,9 @@ public class ClientDAO {
 				client.setId(rs.getLong("id"));
 				client.setAtivo(rs.getBoolean("ativo"));
 				client.setCpf(rs.getLong("cpf"));
+				client.setTelefone(rs.getString("telefone"));
 				client.setDataNascimento(rs.getDate("datanascimento"));
-				client.setDataVencimento(rs.getDate("datavencimento"));
+				client.setDataVencimento(rs.getLong("datavencimento"));
 				client.setNome(rs.getString("nome"));
 			}
 		} catch (SQLException e) {

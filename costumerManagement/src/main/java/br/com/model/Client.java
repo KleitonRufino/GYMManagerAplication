@@ -7,8 +7,9 @@ public class Client {
 	private boolean ativo;
 	private Long cpf;
 	private Date dataNascimento;
-	private Date dataVencimento;
+	private Long dataVencimento;
 	private String nome;
+	private String telefone;
 
 	public boolean isAtivo() {
 		return ativo;
@@ -46,16 +47,25 @@ public class Client {
 		return id;
 	}
 
-	public Date getDataVencimento() {
-		return dataVencimento;
-	}
-
-	public void setDataVencimento(Date dataVencimento) {
-		this.dataVencimento = dataVencimento;
-	}
-
 	public void setId(long id) {
 		this.id = id;
 	}
+
+	public Long getDataVencimento() {
+		return dataVencimento;
+	}
+
+	public void setDataVencimento(Long dataVencimento) {
+		this.dataVencimento = dataVencimento;
+	}
+
+	public String getTelefone() {
+		return telefone;
+	}
+
+	public void setTelefone(String telefone) {
+		this.telefone = telefone;
+	}
+
 
 }
