@@ -23,9 +23,19 @@ public class AdministracaoController {
 	@RequestMapping(value = "/clientes", method = RequestMethod.GET)
 	public String listarClientes(Model model){
 		List<Client> clients = this.managerClient.findAll();
-		System.out.println(clients.size());
 		model.addAttribute("clientes", clients);
 		return "admin/lista";
+	}
+	
+	@RequestMapping(value = "/cadastrar", method = RequestMethod.GET)
+	public String cadastrarNovoCliente(Model model){
+		return "admin/novo";
+	}
+	
+	@RequestMapping(value = "/editar", method = RequestMethod.GET)
+	public String editar(Long id, Model model){
+		model.addAttribute("cliente", this.managerClient.find(id));
+		return "admin/editar";
 	}
 	
 }
