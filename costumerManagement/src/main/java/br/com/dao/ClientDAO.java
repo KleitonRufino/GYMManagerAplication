@@ -11,7 +11,6 @@ import br.com.model.Client;
 import conexao.Conexao;
 
 public class ClientDAO {
-
 	public void save(Client client, Long idUser) {
 		Connection conexao = Conexao.getConnection();
 		PreparedStatement insereSt = null;

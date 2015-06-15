@@ -26,18 +26,27 @@ body {
 </head>
 <body>
 	<div class="container">
-		<form class="form-horizontal" style="width: 500px;">
+		<form class="form-horizontal" style="width: 500px;" action="adicionaCliente" method="post">
+			
+			<div class="form-group form-group-sm">
+				<label class="col-sm-2 control-label" for="email"> Email</label>
+				<div class="col-sm-10">
+					<input class="form-control" type="text" id="email"
+						placeholder="Email" name="email">
+				</div>
+			</div>
+			
 			<div class="form-group form-group-sm">
 				<label class="col-sm-2 control-label" for="nome"> Nome</label>
 				<div class="col-sm-10">
 					<input class="form-control" type="text" id="nome"
-						placeholder="Nome">
+						placeholder="Nome" name="nome">
 				</div>
 			</div>
 			<div class="form-group form-group-sm">
 				<label class="col-sm-2 control-label" for="cpf"> Cpf</label>
 				<div class="col-sm-10">
-					<input class="form-control" type="text" id="cpf" placeholder="Cpf">
+					<input class="form-control" type="text" id="cpf" placeholder="Cpf" name = "cpf">
 				</div>
 			</div>
 			<div class="form-group form-group-sm">
@@ -45,17 +54,17 @@ body {
 					telefone</label>
 				<div class="col-sm-10">
 					<input class="form-control" type="text" id="telefone"
-						placeholder="Telefone">
+						placeholder="Telefone" name ="telefone">
 				</div>
 			</div>
 			<div class="form-group form-group-sm">
 				<label class="col-sm-2 control-label" for="nome"> Nascimento</label>
 				<div class="col-sm-10">
 					<input class="form-control" type="text" id="nascimento"
-						placeholder="Data Nascimento">
+						placeholder="Data Nascimento" name="dataNascimento">
 				</div>
 			</div>
-			<button type="button" class="btn btn-primary">Cadastrar</button>
+			<button type="submit" class="btn btn-primary">Cadastrar</button>
 		</form>
 	</div>
 

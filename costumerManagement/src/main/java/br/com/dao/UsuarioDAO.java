@@ -69,7 +69,7 @@ public class UsuarioDAO {
 		Usuario user = new Usuario();
 		Connection conexao = Conexao.getConnection();
 		PreparedStatement find = null;
-		String sql = "select id, login, senha from usuario u where login=?";
+		String sql = "select * from usuario u where login=?";
 		try {
 			find = (PreparedStatement) conexao.prepareStatement(sql);
 			find.setString(1, login);

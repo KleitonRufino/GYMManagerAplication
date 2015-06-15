@@ -23,8 +23,8 @@
 								<span class="caret"></span>
 						</a>
 							<ul class="dropdown-menu" role="menu">
-								<li><a href="administracao/cadastrar">Novo</a></li>
-								<li><a href="administracao/clientes">Lista</a></li>
+								<li><a href="/webApplication/administracao/cadastrar">Novo</a></li>
+								<li><a href="/webApplication/administracao/clientes">Lista</a></li>
 							</ul></li>
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
