@@ -1,7 +1,7 @@
 package br.com.service.impl;
 
 import br.com.dao.UserDAO;
-import br.com.model.User;
+import br.com.model.Usuario;
 import br.com.service.IAccountManager;
 
 public class AccountManager implements IAccountManager {
@@ -12,28 +12,33 @@ public class AccountManager implements IAccountManager {
 	}
 
 	@Override
-	public User findUserById(Long idUser) {
-		return this.findUserById(idUser);
+	public void save(Usuario user) {
+		this.dao.save(user);
 	}
 
 	@Override
-	public User findUserByLogin(String login) {
-		return this.dao.findUserByLogin(login);
+	public Usuario find(Long id) {
+		return this.dao.find(id);
 	}
 
 	@Override
-	public void addUser(User user) {
-		this.dao.addUser(user);
+	public Usuario find(String login) {
+		return this.dao.find(login);
 	}
 
 	@Override
-	public void updateUser(User user) {
-		this.dao.updateUser(user);
+	public Usuario find(String login, String senha) {
+		return this.dao.find(login, senha);
 	}
 
 	@Override
-	public void deleteUser(Long idUser) {
-		this.dao.deleteUser(idUser);
+	public void update(Usuario user) {
+		this.dao.update(user);
+	}
+
+	@Override
+	public void remove(Long id) {
+		this.dao.remove(id);
 	}
 
 }

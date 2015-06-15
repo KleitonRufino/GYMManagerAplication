@@ -1,17 +1,20 @@
 package br.com.service;
 
-import br.com.model.User;
+import br.com.model.Usuario;
+
 
 public interface IAccountManager {
-	
-	public User findUserById(Long idUser);
 
-	public User findUserByLogin(String login);
+	public void save(Usuario user);
 
-	public void addUser(User user);
+	public Usuario find(Long id);
 
-	public void updateUser(User user);
+	public Usuario find(String login);
 
-	public void deleteUser(Long idUser);
+	public Usuario find(String login, String senha);
+
+	public void update(Usuario user);
+
+	public void remove(Long id);
 
 }

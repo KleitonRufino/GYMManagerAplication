@@ -5,22 +5,41 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import br.com.model.User;
+import br.com.model.Usuario;
 import conexao.Conexao;
 
 public class UserDAO {
-	public User findUserById(Long idUser) {
-		User user = null;
+	public void save(Usuario user) {
+		Connection conexao = Conexao.getConnection();
+		PreparedStatement insereSt = null;
+		String sql = "insert into usuario(login, senha) values (?,?)";
+		try {
+			insereSt = (PreparedStatement) conexao.prepareStatement(sql);
+			insereSt.setString(1, user.getLogin());
+			insereSt.setString(2, user.getSenha());
+			insereSt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				insereSt.close();
+				conexao.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+
+	public Usuario find(Long id) {
+		Usuario user = new Usuario();
 		Connection conexao = Conexao.getConnection();
 		PreparedStatement find = null;
-		String sql = "select id, login, senha from usuario where id=?";
+		String sql = "select id, login, senha from usuario u where id=?";
 		try {
 			find = (PreparedStatement) conexao.prepareStatement(sql);
-			find.setLong(1, idUser);
+			find.setLong(1, id);
 			ResultSet rs = find.executeQuery();
-
 			while (rs.next()) {
-				user = new User();
 				user.setId(rs.getLong(1));
 				user.setLogin(rs.getString(2));
 				user.setSenha(rs.getString(3));
@@ -35,21 +54,20 @@ public class UserDAO {
 				e.printStackTrace();
 			}
 		}
+
 		return user;
 	}
 
-	public User findUserByLogin(String login) {
-		User user = null;
+	public Usuario find(String login) {
+		Usuario user = new Usuario();
 		Connection conexao = Conexao.getConnection();
 		PreparedStatement find = null;
-		String sql = "select id, login, senha from usuario where id=?";
+		String sql = "select * from usuario u where login=?";
 		try {
 			find = (PreparedStatement) conexao.prepareStatement(sql);
 			find.setString(1, login);
 			ResultSet rs = find.executeQuery();
-
 			while (rs.next()) {
-				user = new User();
 				user.setId(rs.getLong(1));
 				user.setLogin(rs.getString(2));
 				user.setSenha(rs.getString(3));
@@ -64,31 +82,40 @@ public class UserDAO {
 				e.printStackTrace();
 			}
 		}
+
 		return user;
 	}
 
-	public void addUser(User user) {
+	public Usuario find(String login, String senha) {
+		Usuario user = new Usuario();
 		Connection conexao = Conexao.getConnection();
-		PreparedStatement insere = null;
-		String sql = "insert into usuario(login, senha) values (?,?)";
+		PreparedStatement find = null;
+		String sql = "select id, login, senha from usuario u where login=? and senha=?";
 		try {
-			insere = (PreparedStatement) conexao.prepareStatement(sql);
-			insere.setString(1, user.getLogin());
-			insere.setString(2, user.getSenha());
-			insere.executeUpdate();
+			find = (PreparedStatement) conexao.prepareStatement(sql);
+			find.setString(1, login);
+			find.setString(2, senha);
+			ResultSet rs = find.executeQuery();
+			while (rs.next()) {
+				user.setId(rs.getLong(1));
+				user.setLogin(rs.getString(2));
+				user.setSenha(rs.getString(3));
+			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
 			try {
-				insere.close();
+				find.close();
 				conexao.close();
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}
 		}
+
+		return user;
 	}
 
-	public void updateUser(User user) {
+	public void update(Usuario user) {
 		Connection conexao = Conexao.getConnection();
 		PreparedStatement update = null;
 		String sql = "update usuario set login=?, senha=? where id=?";
@@ -110,13 +137,13 @@ public class UserDAO {
 		}
 	}
 
-	public void deleteUser(Long idUser) {
+	public void remove(Long id) {
 		Connection conexao = Conexao.getConnection();
 		PreparedStatement delete = null;
 		String sql = "delete from usuario where id=?";
 		try {
 			delete = (PreparedStatement) conexao.prepareStatement(sql);
-			delete.setLong(1, idUser);
+			delete.setLong(1, id);
 			delete.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -129,5 +156,4 @@ public class UserDAO {
 			}
 		}
 	}
-
 }
