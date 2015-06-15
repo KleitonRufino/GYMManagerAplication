@@ -146,10 +146,10 @@ public class ClientDAO {
 			update.setBoolean(1, client.isAtivo());
 			update.setLong(2, client.getCpf());
 			update.setString(3, client.getTelefone());
-			update.setDate(3, client.getDataNascimento());
-			update.setLong(4, client.getDataVencimento());
-			update.setString(5, client.getNome());
-			update.setLong(6, client.getId());
+			update.setDate(4, client.getDataNascimento());
+			update.setLong(5, client.getDataVencimento());
+			update.setString(6, client.getNome());
+			update.setLong(7, client.getId());
 			update.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();

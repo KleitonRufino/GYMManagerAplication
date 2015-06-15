@@ -6,6 +6,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import br.com.model.Client;
 import br.com.service.IClientManager;
@@ -33,9 +34,17 @@ public class AdministracaoController {
 	}
 	
 	@RequestMapping(value = "/editar", method = RequestMethod.GET)
-	public String editar(Long id, Model model){
+	public String editarCliente(Long id, Model model){
 		model.addAttribute("cliente", this.managerClient.find(id));
 		return "admin/editar";
 	}
+
+	@RequestMapping(value = "/alterarCliente", method = RequestMethod.POST)
+	public String alterarCliente(Client client, Model model, RedirectAttributes redirect){
+		this.managerClient.update(client);
+		redirect.addFlashAttribute("info", "Cliente " + client.getNome() + " editado com sucesso");
+		return "redirect:clientes";
+	}
+	
 	
 }

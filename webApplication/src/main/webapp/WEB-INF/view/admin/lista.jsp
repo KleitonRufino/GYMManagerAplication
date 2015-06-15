@@ -24,13 +24,25 @@ body {
 <title>Insert title here</title>
 </head>
 <body>
-	<div class="container" style="width: 1000px;">
 
+
+
+	<div class="container">
+		<c:if test="${not empty info}">
+			<div class="alert alert-info alert-dismissible" role="alert"
+				style="height: 50px;">
+				<button type="button" class="close" data-dismiss="alert">
+					<span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+				</button>
+				<c:out value="${info}"></c:out>
+			</div>
+		</c:if>
 		<table class="table table-hoverl">
 			<tr>
 				<th>#</th>
 				<th>Nome</th>
 				<th>Cpf</th>
+				<th>Telefone</th>
 				<th>Data Nascimento</th>
 				<th>Data Vencimento</th>
 				<th></th>
@@ -40,9 +52,11 @@ body {
 					<td>${cliente.id}</td>
 					<td>${cliente.nome }</td>
 					<td>${cliente.cpf }</td>
+					<td>${cliente.telefone }</td>
 					<td>${cliente.dataNascimento }</td>
 					<td>${cliente.dataVencimento }</td>
-					<td><a href="editar?id=${cliente.id}" role="button" class="btn btn-primary">Editar</a></td>
+					<td><a href="editar?id=${cliente.id}" role="button"
+						class="btn btn-primary">Editar</a></td>
 				</tr>
 			</c:forEach>
 		</table>
