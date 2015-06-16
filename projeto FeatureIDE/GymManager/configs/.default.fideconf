@@ -1,0 +1,24 @@
+# Lists all features from the model with manual (first digit) and automatic (second digit) selection
+# 0 = deselected, 1 = selected, 2 = undefined
+21GymManager
+12Notifications
+11Payment_Manager
+11Costs
+11Monthly_Payment
+11Account_Manager
+11Password_Recovery
+12DispatchEmail
+22DispatchSMS
+11Account_Type
+20Normal
+11Premium
+21Extra_Services
+12Nutrition
+21Personal_Trainer
+11Training
+21Body_Condition
+21Bodybuilding_Guide
+22Extra_Activitys
+11Costumers_Management
+11Supplier_Management
+11Colaborators_Management

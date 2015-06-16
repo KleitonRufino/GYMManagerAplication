@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+	<featureModel chosenLayoutAlgorithm="4">
+		<struct>
+			<and abstract="true" mandatory="true" name="GymManager">
+				<feature name="Notifications"/>
+				<and mandatory="true" name="Payment_Manager">
+					<feature mandatory="true" name="Costs"/>
+					<feature mandatory="true" name="Monthly_Payment"/>
+				</and>
+				<and mandatory="true" name="Account_Manager">
+					<or mandatory="true" name="Password_Recovery">
+						<feature mandatory="true" name="DispatchEmail"/>
+						<feature mandatory="true" name="DispatchSMS"/>
+					</or>
+					<alt name="Account_Type">
+						<feature mandatory="true" name="Normal"/>
+						<feature mandatory="true" name="Premium"/>
+					</alt>
+				</and>
+				<and name="Extra_Services">
+					<feature name="Nutrition"/>
+					<feature name="Personal_Trainer"/>
+				</and>
+				<and name="Training">
+					<feature name="Body_Condition"/>
+					<feature mandatory="true" name="Bodybuilding_Guide"/>
+				</and>
+				<feature name="Extra_Activitys"/>
+				<feature mandatory="true" name="Costumers_Management"/>
+				<feature mandatory="true" name="Supplier_Management"/>
+				<feature mandatory="true" name="Colaborators_Management"/>
+			</and>
+		</struct>
+		<constraints>
+			<rule>
+				<imp>
+					<var>Normal</var>
+					<not>
+						<var>Extra_Services</var>
+					</not>
+				</imp>
+			</rule>
+			<rule>
+				<imp>
+					<var>Premium</var>
+					<conj>
+						<var>Bodybuilding_Guide</var>
+						<conj>
+							<var>Personal_Trainer</var>
+							<var>Body_Condition</var>
+						</conj>
+					</conj>
+				</imp>
+			</rule>
+		</constraints>
+		<calculations Auto="true" Constraints="true" Features="true" Redundant="true" Tautology="true"/>
+		<comments/>
+		<featureOrder userDefined="false"/>
+	</featureModel>
